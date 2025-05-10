@@ -100,19 +100,36 @@
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
+    .feedback-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .feedback-image {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
+    .feedback-image img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .feedback-form {
+      flex: 1;
+      min-width: 250px;
+    }
     .feedback-title {
       color: var(--primary);
       text-align: center;
       margin-bottom: 1.5rem;
     }
-    .feedback-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
     .form-group {
       display: flex;
       flex-direction: column;
+      margin-bottom: 1rem;
     }
     .form-group label {
       font-weight: 600;
@@ -135,6 +152,7 @@
       font-weight: bold;
       cursor: pointer;
       transition: all 0.3s;
+      width: 100%;
     }
     .submit-btn:hover {
       background: #ff5252;
@@ -296,34 +314,42 @@
     </div>
   </div>
 
-  <!-- Feedback Section -->
+  <!-- Feedback Section with Image -->
   <section class="feedback-section">
     <h2 class="feedback-title">Share Your Feedback</h2>
-    <div class="feedback-form">
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" placeholder="Enter your name">
+    <div class="feedback-container">
+      <div class="feedback-image">
+        <img src="Feedback.jpg" alt="KRAVE MOMOS Feedback">
+        <p style="margin-top: 1rem; font-weight: 600;">Scan to share your thoughts</p>
       </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="Enter your phone number">
+      <div class="feedback-form">
+        <form>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+          </div>
+          <div class="form-group">
+            <label for="rating">Your Rating</label>
+            <select id="rating">
+              <option value="">Select your rating</option>
+              <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+              <option value="4">⭐⭐⭐⭐ Very Good</option>
+              <option value="3">⭐⭐⭐ Good</option>
+              <option value="2">⭐⭐ Average</option>
+              <option value="1">⭐ Poor</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Feedback</label>
+            <textarea id="message" rows="4" placeholder="Share your experience..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="rating">Your Rating</label>
-        <select id="rating">
-          <option value="">Select your rating</option>
-          <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-          <option value="4">⭐⭐⭐⭐ Very Good</option>
-          <option value="3">⭐⭐⭐ Good</option>
-          <option value="2">⭐⭐ Average</option>
-          <option value="1">⭐ Poor</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Your Feedback</label>
-        <textarea id="message" rows="4" placeholder="Share your experience..."></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Submit Feedback</button>
     </div>
   </section>
 
