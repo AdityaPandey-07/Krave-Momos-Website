@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KRAVE MOMOS | Menu</title>
+  <title>KRAVE MOMOS | Best Momos in Prayagraj</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
   <style>
     :root {
@@ -17,6 +17,7 @@
       margin: 0;
       background: var(--light);
       color: var(--dark);
+      line-height: 1.6;
     }
     /* Header */
     header {
@@ -38,6 +39,11 @@
       display: inline-block;
       margin: 1rem 0;
       font-weight: bold;
+      transition: all 0.3s;
+    }
+    .call-btn:hover {
+      background: #ff5252;
+      transform: scale(1.05);
     }
     /* Menu Tabs */
     .menu-tabs {
@@ -47,7 +53,10 @@
       gap: 0.5rem;
       padding: 1rem;
       background: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     .tab-btn {
       padding: 0.8rem 1.5rem;
@@ -58,13 +67,16 @@
       font-weight: bold;
       transition: all 0.3s;
     }
+    .tab-btn:hover {
+      background: #ddd;
+    }
     .tab-btn.active {
       background: var(--primary);
       color: white;
     }
     .menu-content {
       display: none;
-      padding: 1rem;
+      padding: 2rem 1rem;
       max-width: 800px;
       margin: 0 auto;
     }
@@ -80,13 +92,107 @@
       background: white;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+    .menu-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     .item-name { font-weight: 600; }
-    .item-price { color: var(--primary); }
-    /* Gallery & Feedback (Previous CSS remains same) */
+    .item-price { color: var(--primary); font-weight: bold; }
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+      background: var(--light);
+    }
+    .gallery h2 {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: var(--primary);
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+    /* Feedback */
+    #feedback {
+      padding: 3rem 1rem;
+      text-align: center;
+      background: white;
+    }
+    .feedback-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      align-items: center;
+    }
+    .feedback-image {
+      flex: 1;
+      min-width: 250px;
+    }
+    .feedback-image img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .feedback-form {
+      flex: 1;
+      min-width: 250px;
+      background: var(--light);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .form-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .form-group input, 
+    .form-group textarea, 
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+    }
+    /* Location */
+    #location {
+      padding: 2rem;
+      text-align: center;
+      background: var(--light);
+    }
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    footer a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <h1>KRAVE MOMOS</h1>
     <p class="tagline">Steamy. Spicy. Irresistible.</p>
@@ -98,7 +204,7 @@
     <button class="tab-btn active" onclick="openTab('momos')">Momos</button>
     <button class="tab-btn" onclick="openTab('bbq')">BBQ Momos</button>
     <button class="tab-btn" onclick="openTab('burgers')">Burgers</button>
-    <button class="tab-btn" onclick="openTab('drinks')">Drinks</button>
+    <button class="tab-btn" onclick="openTab('drinks')">Drinks & Desserts</button>
   </div>
 
   <!-- Momos Tab -->
@@ -108,10 +214,25 @@
       <span class="item-price">₹60</span>
     </div>
     <div class="menu-item">
+      <span class="item-name">Veg Steam Momo (10 Pcs)</span>
+      <span class="item-price">₹100</span>
+    </div>
+    <div class="menu-item">
       <span class="item-name">Paneer Steam Momo (5 Pcs)</span>
       <span class="item-price">₹70</span>
     </div>
-    <!-- Add more items -->
+    <div class="menu-item">
+      <span class="item-name">Paneer Steam Momo (10 Pcs)</span>
+      <span class="item-price">₹120</span>
+    </div>
+    <div class="menu-item">
+      <span class="item-name">Veg Fried Momo (5 Pcs)</span>
+      <span class="item-price">₹70</span>
+    </div>
+    <div class="menu-item">
+      <span class="item-name">Veg Fried Momo (10 Pcs)</span>
+      <span class="item-price">₹120</span>
+    </div>
   </div>
 
   <!-- BBQ Momos Tab -->
@@ -121,10 +242,25 @@
       <span class="item-price">₹70</span>
     </div>
     <div class="menu-item">
+      <span class="item-name">Veg BBQ Momo (10 Pcs)</span>
+      <span class="item-price">₹120</span>
+    </div>
+    <div class="menu-item">
       <span class="item-name">Paneer BBQ Momo (5 Pcs)</span>
       <span class="item-price">₹80</span>
     </div>
-    <!-- Add more items -->
+    <div class="menu-item">
+      <span class="item-name">Paneer BBQ Momo (10 Pcs)</span>
+      <span class="item-price">₹180</span>
+    </div>
+    <div class="menu-item">
+      <span class="item-name">Veg Afghani Momo (5 Pcs)</span>
+      <span class="item-price">₹90</span>
+    </div>
+    <div class="menu-item">
+      <span class="item-name">Veg Afghani Momo (10 Pcs)</span>
+      <span class="item-price">₹160</span>
+    </div>
   </div>
 
   <!-- Burgers Tab -->
@@ -134,24 +270,100 @@
       <span class="item-price">₹100</span>
     </div>
     <div class="menu-item">
-      <span class="item-name">Paneer Burger</span>
+      <span class="item-name">Desi Butter Paneer Burger</span>
       <span class="item-price">₹150</span>
+    </div>
+    <div class="menu-item">
+      <span class="item-name">Mumbai Street Sandwich</span>
+      <span class="item-price">₹100</span>
+    </div>
+    <div class="menu-item">
+      <span class="item-name">Indori Retreat Sandwich</span>
+      <span class="item-price">₹120</span>
     </div>
   </div>
 
-  <!-- Drinks Tab -->
+  <!-- Drinks & Desserts Tab -->
   <div id="drinks" class="menu-content">
+    <div class="menu-item">
+      <span class="item-name">Magic Mint Mojito</span>
+      <span class="item-price">₹80</span>
+    </div>
     <div class="menu-item">
       <span class="item-name">Cold Coffee</span>
       <span class="item-price">₹80</span>
     </div>
     <div class="menu-item">
-      <span class="item-name">KitKat Shake</span>
+      <span class="item-name">Kit Kat Shake</span>
       <span class="item-price">₹120</span>
+    </div>
+    <div class="menu-item">
+      <span class="item-name">Oreo Shake</span>
+      <span class="item-price">₹120</span>
+    </div>
+    <div class="menu-item">
+      <span class="item-name">Choco Lava Cake</span>
+      <span class="item-price">₹150</span>
     </div>
   </div>
 
-  <!-- Gallery & Feedback Sections (Same as before) -->
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Our Food Gallery</h2>
+    <img src="3.jpg" alt="Krave Momos Menu 1">
+    <img src="4.jpg" alt="Krave Momos Menu 2">
+    <img src="5.jpg" alt="Krave Momos Burgers">
+    <img src="6.jpg" alt="Krave Momos Drinks">
+  </section>
+
+  <!-- Feedback -->
+  <section id="feedback">
+    <h2>Share Your Feedback</h2>
+    <div class="feedback-container">
+      <div class="feedback-image">
+        <img src="Feedback.jpg" alt="Scan for Feedback">
+      </div>
+      <div class="feedback-form">
+        <h3>We Value Your Thoughts!</h3>
+        <form>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="rating">Rating</label>
+            <select id="rating">
+              <option value="">Select rating</option>
+              <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
+              <option value="4">⭐⭐⭐⭐ (Good)</option>
+              <option value="3">⭐⭐⭐ (Average)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Feedback</label>
+            <textarea id="message" rows="3" placeholder="Your experience..."></textarea>
+          </div>
+          <button type="submit" class="call-btn" style="width: 100%;">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section id="location">
+    <h2>Find Us</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.415678026605!2d77.20685731508222!3d28.628739782423722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5e2b000001%3A0x6baba2466b8266f!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1659872341877!5m2!1sen!2sin" 
+            width="100%" height="400" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
+    <p>📍 Plot no 23, Radhakund, Opposite Rocket Park, Kalindipuram, Prayagraj</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <h3>KRAVE MOMOS</h3>
+    <p>Open: 11AM - 10PM</p>
+    <p>📞 <a href="tel:9305038381">9305038381</a>, <a href="tel:9315048492">9315048492</a></p>
+    <p>© 2023 Krave Momos. All rights reserved.</p>
+  </footer>
 
   <script>
     // Tab Switching Function
