@@ -21,29 +21,22 @@
     }
     /* Header */
     header {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                  url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
-      background-size: cover;
-      color: white;
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-    h1 { font-size: 3rem; margin: 0; }
-    .tagline { font-size: 1.5rem; }
-    .call-btn {
       background: var(--primary);
       color: white;
-      padding: 0.8rem 1.5rem;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    h1 { font-size: 2.5rem; margin: 0; }
+    .tagline { font-size: 1.2rem; margin: 0.5rem 0 1.5rem; }
+    .call-btn {
+      background: white;
+      color: var(--primary);
+      padding: 0.7rem 1.5rem;
       border-radius: 50px;
       text-decoration: none;
       display: inline-block;
-      margin: 1rem 0;
       font-weight: bold;
       transition: all 0.3s;
-    }
-    .call-btn:hover {
-      background: #ff5252;
-      transform: scale(1.05);
     }
     /* Menu Tabs */
     .menu-tabs {
@@ -53,130 +46,98 @@
       gap: 0.5rem;
       padding: 1rem;
       background: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
       z-index: 100;
     }
     .tab-btn {
-      padding: 0.8rem 1.5rem;
-      background: #eee;
+      padding: 0.7rem 1.3rem;
+      background: #f5f5f5;
       border: none;
       border-radius: 50px;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 600;
       transition: all 0.3s;
     }
     .tab-btn:hover {
-      background: #ddd;
+      background: #e0e0e0;
     }
     .tab-btn.active {
       background: var(--primary);
       color: white;
     }
+    /* Menu Content */
     .menu-content {
       display: none;
-      padding: 2rem 1rem;
       max-width: 800px;
       margin: 0 auto;
+      padding: 1rem;
     }
     .menu-content.active {
       display: block;
     }
-    /* Menu Items */
+    .category-title {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.5rem;
+      margin-top: 1.5rem;
+    }
     .menu-item {
       display: flex;
       justify-content: space-between;
-      padding: 1rem;
-      margin: 0.5rem 0;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      transition: all 0.3s;
-    }
-    .menu-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+      border-bottom: 1px dashed #ddd;
     }
     .item-name { font-weight: 600; }
     .item-price { color: var(--primary); font-weight: bold; }
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-      background: var(--light);
-    }
-    .gallery h2 {
-      grid-column: 1 / -1;
-      text-align: center;
-      color: var(--primary);
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.02);
-    }
-    /* Feedback */
-    #feedback {
-      padding: 3rem 1rem;
-      text-align: center;
+    /* Feedback Section */
+    .feedback-section {
       background: white;
-    }
-    .feedback-container {
+      padding: 3rem 1rem;
+      margin: 2rem auto;
       max-width: 800px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      align-items: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    .feedback-image {
-      flex: 1;
-      min-width: 250px;
-    }
-    .feedback-image img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .feedback-title {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
     .feedback-form {
-      flex: 1;
-      min-width: 250px;
-      background: var(--light);
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
     .form-group {
-      margin-bottom: 1rem;
-      text-align: left;
+      display: flex;
+      flex-direction: column;
     }
     .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
       font-weight: 600;
+      margin-bottom: 0.5rem;
     }
-    .form-group input, 
-    .form-group textarea, 
-    .form-group select {
-      width: 100%;
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
       padding: 0.8rem;
       border: 1px solid #ddd;
       border-radius: 5px;
       font-family: 'Poppins', sans-serif;
     }
-    /* Location */
-    #location {
-      padding: 2rem;
-      text-align: center;
-      background: var(--light);
+    .submit-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .submit-btn:hover {
+      background: #ff5252;
     }
     /* Footer */
     footer {
@@ -184,11 +145,9 @@
       color: white;
       text-align: center;
       padding: 2rem;
+      margin-top: 3rem;
     }
-    footer a {
-      color: var(--secondary);
-      text-decoration: none;
-    }
+    footer a { color: var(--secondary); text-decoration: none; }
   </style>
 </head>
 <body>
@@ -201,70 +160,70 @@
 
   <!-- Menu Tabs -->
   <div class="menu-tabs">
-    <button class="tab-btn active" onclick="openTab('momos')">Momos</button>
-    <button class="tab-btn" onclick="openTab('bbq')">BBQ Momos</button>
-    <button class="tab-btn" onclick="openTab('burgers')">Burgers</button>
-    <button class="tab-btn" onclick="openTab('drinks')">Drinks & Desserts</button>
+    <button class="tab-btn active" onclick="showMenu('momos')">Momos</button>
+    <button class="tab-btn" onclick="showMenu('bbq')">Barbeque</button>
+    <button class="tab-btn" onclick="showMenu('burgers')">Burgers</button>
+    <button class="tab-btn" onclick="showMenu('rice')">Rice/Noodles</button>
+    <button class="tab-btn" onclick="showMenu('drinks')">Drinks</button>
   </div>
 
-  <!-- Momos Tab -->
+  <!-- Momos Menu -->
   <div id="momos" class="menu-content active">
+    <h2 class="category-title">STEAM MOMOS (5/10 PCS)</h2>
     <div class="menu-item">
-      <span class="item-name">Veg Steam Momo (5 Pcs)</span>
-      <span class="item-price">₹60</span>
+      <span class="item-name">Veg Steam Momo</span>
+      <span class="item-price">₹60/₹100</span>
     </div>
     <div class="menu-item">
-      <span class="item-name">Veg Steam Momo (10 Pcs)</span>
-      <span class="item-price">₹100</span>
+      <span class="item-name">Paneer Steam Momo</span>
+      <span class="item-price">₹70/₹120</span>
+    </div>
+    
+    <h2 class="category-title">FRIED MOMOS (5/10 PCS)</h2>
+    <div class="menu-item">
+      <span class="item-name">Veg Fried Momo</span>
+      <span class="item-price">₹70/₹120</span>
     </div>
     <div class="menu-item">
-      <span class="item-name">Paneer Steam Momo (5 Pcs)</span>
-      <span class="item-price">₹70</span>
+      <span class="item-name">Paneer Fried Momo</span>
+      <span class="item-price">₹80/₹130</span>
+    </div>
+    
+    <h2 class="category-title">SCHEZWAN MOMOS (5/10 PCS)</h2>
+    <div class="menu-item">
+      <span class="item-name">Veg Schezwan Momo</span>
+      <span class="item-price">₹90/₹140</span>
     </div>
     <div class="menu-item">
-      <span class="item-name">Paneer Steam Momo (10 Pcs)</span>
-      <span class="item-price">₹120</span>
-    </div>
-    <div class="menu-item">
-      <span class="item-name">Veg Fried Momo (5 Pcs)</span>
-      <span class="item-price">₹70</span>
-    </div>
-    <div class="menu-item">
-      <span class="item-name">Veg Fried Momo (10 Pcs)</span>
-      <span class="item-price">₹120</span>
+      <span class="item-name">Paneer Schezwan Momo</span>
+      <span class="item-price">₹100/₹160</span>
     </div>
   </div>
 
-  <!-- BBQ Momos Tab -->
+  <!-- Barbeque Menu -->
   <div id="bbq" class="menu-content">
+    <h2 class="category-title">BARBEQUE MOMOS (5/10 PCS)</h2>
     <div class="menu-item">
-      <span class="item-name">Veg BBQ Momo (5 Pcs)</span>
-      <span class="item-price">₹70</span>
+      <span class="item-name">Veg BBQ Momo</span>
+      <span class="item-price">₹70/₹120</span>
     </div>
     <div class="menu-item">
-      <span class="item-name">Veg BBQ Momo (10 Pcs)</span>
-      <span class="item-price">₹120</span>
+      <span class="item-name">Paneer BBQ Momo</span>
+      <span class="item-price">₹80/₹180</span>
     </div>
     <div class="menu-item">
-      <span class="item-name">Paneer BBQ Momo (5 Pcs)</span>
-      <span class="item-price">₹80</span>
+      <span class="item-name">Veg Afghani Momo</span>
+      <span class="item-price">₹90/₹160</span>
     </div>
     <div class="menu-item">
-      <span class="item-name">Paneer BBQ Momo (10 Pcs)</span>
-      <span class="item-price">₹180</span>
-    </div>
-    <div class="menu-item">
-      <span class="item-name">Veg Afghani Momo (5 Pcs)</span>
-      <span class="item-price">₹90</span>
-    </div>
-    <div class="menu-item">
-      <span class="item-name">Veg Afghani Momo (10 Pcs)</span>
-      <span class="item-price">₹160</span>
+      <span class="item-name">Paneer Afghani Momo</span>
+      <span class="item-price">₹100/₹180</span>
     </div>
   </div>
 
-  <!-- Burgers Tab -->
+  <!-- Burgers Menu -->
   <div id="burgers" class="menu-content">
+    <h2 class="category-title">BURGERS</h2>
     <div class="menu-item">
       <span class="item-name">Veg Burger</span>
       <span class="item-price">₹100</span>
@@ -273,6 +232,8 @@
       <span class="item-name">Desi Butter Paneer Burger</span>
       <span class="item-price">₹150</span>
     </div>
+    
+    <h2 class="category-title">SANDWICHES</h2>
     <div class="menu-item">
       <span class="item-name">Mumbai Street Sandwich</span>
       <span class="item-price">₹100</span>
@@ -283,8 +244,32 @@
     </div>
   </div>
 
-  <!-- Drinks & Desserts Tab -->
+  <!-- Rice/Noodles Menu -->
+  <div id="rice" class="menu-content">
+    <h2 class="category-title">NOODLES</h2>
+    <div class="menu-item">
+      <span class="item-name">Veg Noodle</span>
+      <span class="item-price">₹70/₹120</span>
+    </div>
+    <div class="menu-item">
+      <span class="item-name">Schezwan Noodle</span>
+      <span class="item-price">₹100/₹160</span>
+    </div>
+    
+    <h2 class="category-title">RICE</h2>
+    <div class="menu-item">
+      <span class="item-name">Veg Fried Rice</span>
+      <span class="item-price">₹80/₹140</span>
+    </div>
+    <div class="menu-item">
+      <span class="item-name">Paneer Fried Rice</span>
+      <span class="item-price">₹90/₹150</span>
+    </div>
+  </div>
+
+  <!-- Drinks Menu -->
   <div id="drinks" class="menu-content">
+    <h2 class="category-title">COLD DRINKS</h2>
     <div class="menu-item">
       <span class="item-name">Magic Mint Mojito</span>
       <span class="item-price">₹80</span>
@@ -293,6 +278,8 @@
       <span class="item-name">Cold Coffee</span>
       <span class="item-price">₹80</span>
     </div>
+    
+    <h2 class="category-title">SHAKES</h2>
     <div class="menu-item">
       <span class="item-name">Kit Kat Shake</span>
       <span class="item-price">₹120</span>
@@ -301,80 +288,64 @@
       <span class="item-name">Oreo Shake</span>
       <span class="item-price">₹120</span>
     </div>
+    
+    <h2 class="category-title">DESSERTS</h2>
     <div class="menu-item">
       <span class="item-name">Choco Lava Cake</span>
       <span class="item-price">₹150</span>
     </div>
   </div>
 
-  <!-- Gallery -->
-  <section class="gallery">
-    <h2>Our Food Gallery</h2>
-    <img src="3.jpg" alt="Krave Momos Menu 1">
-    <img src="4.jpg" alt="Krave Momos Menu 2">
-    <img src="5.jpg" alt="Krave Momos Burgers">
-    <img src="6.jpg" alt="Krave Momos Drinks">
-  </section>
-
-  <!-- Feedback -->
-  <section id="feedback">
-    <h2>Share Your Feedback</h2>
-    <div class="feedback-container">
-      <div class="feedback-image">
-        <img src="Feedback.jpg" alt="Scan for Feedback">
+  <!-- Feedback Section -->
+  <section class="feedback-section">
+    <h2 class="feedback-title">Share Your Feedback</h2>
+    <div class="feedback-form">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
       </div>
-      <div class="feedback-form">
-        <h3>We Value Your Thoughts!</h3>
-        <form>
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" placeholder="Enter your name">
-          </div>
-          <div class="form-group">
-            <label for="rating">Rating</label>
-            <select id="rating">
-              <option value="">Select rating</option>
-              <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
-              <option value="4">⭐⭐⭐⭐ (Good)</option>
-              <option value="3">⭐⭐⭐ (Average)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Feedback</label>
-            <textarea id="message" rows="3" placeholder="Your experience..."></textarea>
-          </div>
-          <button type="submit" class="call-btn" style="width: 100%;">Submit</button>
-        </form>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number">
       </div>
+      <div class="form-group">
+        <label for="rating">Your Rating</label>
+        <select id="rating">
+          <option value="">Select your rating</option>
+          <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+          <option value="4">⭐⭐⭐⭐ Very Good</option>
+          <option value="3">⭐⭐⭐ Good</option>
+          <option value="2">⭐⭐ Average</option>
+          <option value="1">⭐ Poor</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Your Feedback</label>
+        <textarea id="message" rows="4" placeholder="Share your experience..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Submit Feedback</button>
     </div>
-  </section>
-
-  <!-- Location -->
-  <section id="location">
-    <h2>Find Us</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.415678026605!2d77.20685731508222!3d28.628739782423722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5e2b000001%3A0x6baba2466b8266f!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1659872341877!5m2!1sen!2sin" 
-            width="100%" height="400" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
-    <p>📍 Plot no 23, Radhakund, Opposite Rocket Park, Kalindipuram, Prayagraj</p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <h3>KRAVE MOMOS</h3>
-    <p>Open: 11AM - 10PM</p>
+    <h3>Visit Us Today!</h3>
+    <p>📍 Plot no 23, Radhakund, Opposite Rocket Park, Kalindipuram, Prayagraj</p>
     <p>📞 <a href="tel:9305038381">9305038381</a>, <a href="tel:9315048492">9315048492</a></p>
-    <p>© 2023 Krave Momos. All rights reserved.</p>
+    <p>⏰ Open: 11AM - 10PM</p>
   </footer>
 
   <script>
-    // Tab Switching Function
-    function openTab(tabId) {
-      // Hide all tabs
-      document.querySelectorAll('.menu-content').forEach(tab => {
-        tab.classList.remove('active');
+    function showMenu(menuId) {
+      // Hide all menu contents
+      document.querySelectorAll('.menu-content').forEach(menu => {
+        menu.classList.remove('active');
       });
-      // Show selected tab
-      document.getElementById(tabId).classList.add('active');
-      // Update active button
+      
+      // Show selected menu
+      document.getElementById(menuId).classList.add('active');
+      
+      // Update active tab button
       document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('active');
       });
